@@ -12,9 +12,9 @@ This repository documents Team DC Spears' journey through the CHPC 2025 Student 
 | Name | Role | Institution | Primary Responsibilities |
 |------|------|-------------|--------------------------|
 | **Anthony Joseph** | Team Captain & Synthetics Lead | CPUT | HPL, HPCC, HPCG, MathWorks benchmarks |
-| **Thabo Bosvark** | Hardware & Infrastructure Lead | CPUT | DFTB+, Cloud automation, Terraform |
-| **Maanda Mulaudzi** | Environment Specialist | CPUT | ASCOT5, System configuration |
-| **Tshifhiwa Netshifhefhe** | System Administrator | CPUT | AmberMD, Cluster management |
+| **Thabo Bosvark** | Hardware & Infrastructure Lead | CPUT | DFTB+, Cloud automation, Terraform and Initial Cluster Setup |
+| **Maanda Mulaudzi** | Environment Specialist | CPUT | ASCOT5, Lmod |
+| **Tshifhiwa Netshifhefhe** | System Administrator | CPUT | AmberMD, Slurm |
 
 ## Repository Structure
 
