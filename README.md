@@ -1,4 +1,4 @@
-# DcSpears2025 - CHPC Student Cluster Competition 2025
+# DcSpears2025 - CHPC Student Cluster Competition 2025 PUBLIC REPO
 
 ![CPUT Logo](images/CPUT_Logo.png)
 ![Team Photo](images/140-student-cluster-02.jpg)
