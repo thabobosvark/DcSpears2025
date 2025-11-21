@@ -1,6 +1,5 @@
 # DcSpears2025 - CHPC Student Cluster Competition 2025 PUBLIC REPO
 
-![CPUT Logo](images/CPUT_Logo.png)
 ![Team Photo](images/140-student-cluster-02.jpg)
 
 ##  Overview
@@ -15,6 +14,8 @@ This repository documents Team DC Spears' journey through the CHPC 2025 Student 
 | **Thabo Bosvark** | Hardware & Infrastructure Lead | CPUT | DFTB+, Cloud automation, Terraform and Initial Cluster Setup |
 | **Maanda Mulaudzi** | Environment Specialist | CPUT | ASCOT5, Lmod |
 | **Tshifhiwa Netshifhefhe** | System Administrator | CPUT | AmberMD, Slurm |
+
+![CPUT Logo](images/CPUT_Logo.png)
 
 ## Repository Structure
 
@@ -62,7 +63,6 @@ DcSpears2025/
 - SSH key management and secure access
 - Snapshot-based compute node replication
 - NFS-shared home directories across cluster
-- MPI-enabled parallel computing environment
 
 ##  Quick Access Links
 
