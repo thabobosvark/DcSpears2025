@@ -3,39 +3,46 @@ Documentation of Project Digital Ocean and IBM
 
 IBM Cloud and DigitalOcean are robust cloud computing platforms that offer developers flexible and scalable and on demand infrastructure for application and service deployment. This project demonstrates deployment and management of cloud-based resources on these two platforms with an emphasis on automation.  
 
-# Table of Contents  
-<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+# Table of Contents
+
 1. [Launching your First Digital Ocean Virtual Machine Instance](#launching-your-first-digital-ocean-virtual-machine-instance)  
-    1. [Creating Your DigitalOcean Account and Project](#creating-your-digitalocean-account-and-project)
-    1. [Launching Your First Droplet (Head Node)](#launcing-your-first-droplet-(head-node))
-1. [Launching your First IBM Cloud Virtual Machine Instance](#launching-your-first-ibm-cloud-virtual-machine-instance)
-    1. [Creating Your IBM Cloud Account and Project](#creating-your-ibm-cloud-account-and-project)
-    1. [Launching Your First Virtual Server Instance (Head Node)](#launching-your-first-virtual-server-instance-head-node)
-1. [Introduction to Basic Linux Administration](#introduction-to-basic-linux-administration)
-    1. [Accessing Your Droplet via SSH MobaXTerm](#accessing-your-droplet-via-ssh-mobaxterm)
-    1. [Accessing Your Virtual Server Instance via SSH MobaXTerm](#accessing-your-virtual-server-instance-via-ssh-mobaxterm)
-    1. [Running Basic Linux Commands and Services](#running-basic-linux-commands-and-services)  
-1. [Spinning Up a Second Compute Node Using a Snapshot: Digital Ocean](#spinning-up-a-second-compute-node-using-a-snapshot:-digital-ocean)  
-1. [Spinning Up a Second Compute Node Using a Snapshot: IBM Cloud](#spinning-up-a-second-compute-node-using-a-snapshot:-ibm-cloud)  
-1. [Automating the Deployment of your DigitalOcean Instances Using Terraform](#automating-the-deployment-of-your-DigitalOcean-instances-using-terraform)
-    1. [Install and Initialize Terraform](#install-and-initialize-terraform)
-    1. [Generate `clouds.yml` and `main.tf` Files](#generate-cloudsyml-and-maintf-files)
-    1. [Generate, Deploy and Apply Terraform Plan](#generate-deploy-and-apply-terraform-plan)
-1. [Continuous Integration Using CircleCI](#continuous-integration-using-circleci)
-    1. [Prepare GitHub Repository](#prepare-github-repository)
-    1. [Reuse `providers.tf` and `main.tf` Terraform Configurations](#reuse-providerstf-and-maintf-terraform-configurations)
-    1. [Create `.circleci/config.yml` File and `push` Project to GitHub](#create-circleciconfigyml-file-and-push-project-to-github)
-    1. [Create CircleCI Account and Add Project](#create-circleci-account-and-add-project)
-1. [Automating the Deployment of your IBM Cloud Instances Using Terraform](#automating-the-deployment-of-your-ibm-cloud-instances-using-terraform)
-    1. [Install and Initialize Terraform](#install-and-initialize-terraform)
-    1. [Generate Terraform Configuration Files](#generate-terraform-configuration-files)
-    1. [Generate, Deploy and Apply Terraform Plan](#generate-deploy-and-apply-terraform-plan)
-1. [Continuous Integration Using GitHub Actions](#continuous-integration-using-github-actions)
-    1. [Prepare GitHub Repository](#prepare-github-repository)
-    1. [Create GitHub Actions Workflow](#create-github-actions-workflow)
-    1. [Configure GitHub Secrets](#configure-github-secrets)
-    1. [Trigger and Monitor Deployment](#trigger-and-monitor-deployment)
-<!-- markdown-toc end -->  
+   1.1. [Creating Your DigitalOcean Account and Project](#creating-your-digitalocean-account-and-project)  
+   1.2. [Launching Your First Droplet (Head Node)](#launching-your-first-droplet-head-node)
+
+2. [Launching your First IBM Cloud Virtual Machine Instance](#launching-your-first-ibm-cloud-virtual-machine-instance)  
+   2.1. [Creating Your IBM Cloud Account and Project](#creating-your-ibm-cloud-account-and-project)  
+   2.2. [Launching Your First Virtual Server Instance (Head Node)](#launching-your-first-virtual-server-instance-head-node)
+
+3. [Introduction to Basic Linux Administration](#introduction-to-basic-linux-administration)  
+   3.1. [Accessing Your Droplet via SSH MobaXTerm](#accessing-your-droplet-via-ssh-mobaxterm)  
+   3.2. [Accessing Your Virtual Server Instance via SSH MobaXTerm](#accessing-your-virtual-server-instance-via-ssh-mobaxterm)  
+   3.3. [Running Basic Linux Commands and Services](#running-basic-linux-commands-and-services)
+
+4. [Spinning Up a Second Compute Node Using a Snapshot: Digital Ocean](#spinning-up-a-second-compute-node-using-a-snapshot-digital-ocean)
+
+5. [Spinning Up a Second Compute Node Using a Snapshot: IBM Cloud](#spinning-up-a-second-compute-node-using-a-snapshot-ibm-cloud)
+
+6. [Automating the Deployment of your DigitalOcean Instances Using Terraform](#automating-the-deployment-of-your-digitalocean-instances-using-terraform)  
+   6.1. [Install and Initialize Terraform](#install-and-initialize-terraform)  
+   6.2. [Generate clouds.yml and main.tf Files](#generate-cloudsyml-and-maintf-files)  
+   6.3. [Generate, Deploy and Apply Terraform Plan](#generate-deploy-and-apply-terraform-plan)
+
+7. [Continuous Integration Using CircleCI](#continuous-integration-using-circleci)  
+   7.1. [Prepare GitHub Repository](#prepare-github-repository)  
+   7.2. [Reuse providers.tf and main.tf Terraform Configurations](#reuse-providerstf-and-maintf-terraform-configurations)  
+   7.3. [Create .circleci/config.yml File and push Project to GitHub](#create-circleciconfigyml-file-and-push-project-to-github)  
+   7.4. [Create CircleCI Account and Add Project](#create-circleci-account-and-add-project)
+
+8. [Automating the Deployment of your IBM Cloud Instances Using Terraform](#automating-the-deployment-of-your-ibm-cloud-instances-using-terraform)  
+   8.1. [Install and Initialize Terraform](#install-and-initialize-terraform-1)  
+   8.2. [Generate Terraform Configuration Files](#generate-terraform-configuration-files)  
+   8.3. [Generate, Deploy and Apply Terraform Plan](#generate-deploy-and-apply-terraform-plan-1)
+
+9. [Continuous Integration Using GitHub Actions](#continuous-integration-using-github-actions)  
+   9.1. [Prepare GitHub Repository](#prepare-github-repository-1)  
+   9.2. [Create GitHub Actions Workflow](#create-github-actions-workflow)  
+   9.3. [Configure GitHub Secrets](#configure-github-secrets)  
+   9.4. [Trigger and Monitor Deployment](#trigger-and-monitor-deployment)
 
 # Launching your First Digital Ocean Virtual Machine Instance
 
@@ -211,13 +218,13 @@ You need an **SSH key** to securely connect to your Virtual Server Instance.
 #### **Generate SSH Key:**
 **On Linux/macOS or Windows (PowerShell/WSL):**
 ```bash
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+ssh-keygen -t ed25519"
 ```
 When prompted to "Enter file in which to save the key" - press Enter for default location.  
 When prompted for a passphrase - press Enter twice (for no passphrase)  
 View and Copy Public Key:  
 ```bash
-cat ~/.ssh/id_rsa.pub
+cat ~/.ssh/id_ed25519.pub
 ```  
 Copy the entire output (starts with ssh-rsa...)  
 
@@ -897,8 +904,8 @@ jobs:
 
 ## Step 5: GitHub Repository Setup
 
-### Create Private Repository
-1. Go to GitHub.com and create a new private repository
+### Create Public Repository
+1. Go to GitHub.com and create a new public repository
 2. Name it `digital-ocean-deploy-compute-node`
 3. Add team members as collaborators
 
@@ -1397,8 +1404,8 @@ jobs:
 
 ## Step 5: GitHub Repository Setup
 
-### Create Private Repository
-1. Go to GitHub.com and create a new private repository
+### Create Public Repository
+1. Go to GitHub.com and create a new public repository
 2. Name it `ibm-cloud-deploy-compute-node`
 3. Add team members as collaborators
 
