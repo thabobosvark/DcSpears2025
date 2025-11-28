@@ -66,7 +66,7 @@ DcSpears2025/
 
 ##  Quick Access Links
 
-- **[ View Our Poster](Poster/DcSpears%20poster%20(1).pdf)** - Competition presentation poster
+- **[ View Our Poster](Poster/The DcSpears.pdf)** - Competition presentation poster
 - **[ Project Documentation](Project/README.md)** - Complete technical documentation
 - **[ IBM Cloud Automation](https://github.com/thabobosvark/ibm-cloud-cluster-automation)** - IBM deployment repository
 - **[ DigitalOcean Automation](https://github.com/thabobosvark/digital-ocean-deploy-compute-node)** - DigitalOcean deployment repository
